@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Hola, initial-scale=1.0">
+    <title>JavaScript Guide</title>
+</head>
+<body>
+    <p>
+<h1>JSP Guide</h1>
+<p>Simple guide. 
+
+<h1>Introduction</h1>
+
+
+
+<h1>Misc unordered</h1>
+
+/Users/tardes/Documents/GitHub/chorraschorrez.github.io/_Docu/javaScript_Guide.html
+
+<li>
+    sudo chown -R tardes:staff pro_01
+</li>
+
+<p></p>
+<h4>
+    Angular Terminal ======
+</h4>
+
+<li>sudo ng new pro_01</li>
+
+<p></p>
+
+<li>ng serve -o </li>
+
+<li>ng generate component ./components/tarea </li>
+
+
+
+
+<p></p>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+@GitHub:
+-------------------------- 
+Commits subir con nota ej. 
+2024-02-14_16:30   (_fromClass) (_fromHome) 
+
+
+Pedir identificacion, buscamos en lista de palabras que no exista ya. 
+
+
+
+
+
+. @Eclipse for Developers
+. Download ARM. 
+.  /Users/tardes/eclipse/java-2023-12/
+
+
+
+
+
+@Angular mi resúmen:
+-------------------------- 
+(@service HTTP , Create service HTTP)
+* @References: @Tutorial, "Creating a movie fetching service in Angular", https://dev.to/dailydevtips1/creating-a-movie-fetching-service-in-angular-338h
+
+* Go app.module.ts (,,,)
+--
+- Add: 
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+- Add: 
+
+@NgModule({
+  declarations: [
+        // All declarations
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    // Other imports
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+
+- Terminal: Create service: 
+
+ng generate class movie ./
+
+. (alternatives: create an interface called pelicula: ng g interface ./interface/pelicula   )
+
+. Fill movie.ts : 
+
+	* File movie.ts
+	--
+	export class Movie {
+	    Poster: string;
+	    Title: string;
+	    Type: string;
+	    Year: string;
+	    imdbID: string;
+	}
+
+
+
+. Generate service:
+
+. On terminal: 
+
+ng generate service movie
+. (alternatives:  ng generate service httpdata ./services/httpdata --skip-tests     )
+
+. Add content: 
+
+	* File movie.service.ts
+	--
+	
+	import { HttpClient } from '@angular/common/http';
+	import { Injectable } from '@angular/core';
+	import { Movie } from './movie';
+	
+	export type ApiResponse = {
+	  Response: string;
+	  Search: Movie[];
+	  totalResults: string;
+	};
+	
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class MovieService {
+	  apiURL: string = 'http://www.omdbapi.com/?apikey={key}';
+	
+	  constructor(private httpClient: HttpClient) {}
+	}
+
+
+
+. Add search method to it: 
+
+	* File movie.service.ts
+	--
+	(...)
+	searchMovie(name: string) {
+	    return this.httpClient.get<any>(`${this.apiURL}&s=${name}`);
+	}
+	(...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================================
+@pelisweb proyecto 
+========================================================================================
+2024-02-12_2032_pelisweb
+
+https://fpaniaguajavascript.github.io/movies/movies-1900s.json
+
+
+sudo ng new pelisweb  
+
+sudo chown -R tardes:staff pelisweb
+
+GitHub Desktop: menu Add local repository
+
+
+---- DENTRO DE CARPETA pelisweb. Sin sudo
+
+ng g c ./components/clienteweb --skip-tests
+
+ng g s ./services/conectorwebservice --skip-tests
+
+
+
+
+
+@Ionic
+==========
+
+@INSTALACIÓN
+---------------------------------------------
+sudo npm install -g @ionic/cli
+
+ionic v
+
+@APLICACIÓN CREAR
+---------------------------------------------
+(Ej. crear aplicación en carpeta miappionic)
+sudo ionic start miappionic
+
+//permisos: 
+cd tardes
+sudo chown -R tardes:staff miappionic
+
+
+. framework: 
+Angular
+
+. template:
+sidemenu
+
+. elegir: 
+NgModules
+
+* Arrancar projecto Ionic
+---------------------------------------------
+// arranca en el puerto 8100
+ionic serve
+
+
+
+
+. Ir al código en tardes/miappionic/  
+. abrimos el index.html tiene etiquetas de componentes. Ahora son etiquetas ion-ALGO
+. En archivo "app.component.html", pego la etiqueta que quiera. 
+
+
+
+
+. @Hacer ejercicio, 
+================================================
+
+// @CREAR PROYECTO APLICACION
+---
+
+sudo ionic start myionic_001
+
+// Framework: Angular
+
+// Template: sidemenu
+
+// App type: NgModules
+
+// Permisos en carpeta del proyecto: 
+sudo chown -R tardes:staff myionic_001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @SERVIDOR. * Arrancar projecto Ionic
+
+---
+(crearemoS un proyecto en la carpeta myionic_001 (.../GitHub/myionic_001 ))
+cd myionic_001
+
+ionic serve
+
+// Se abrirá un browser, ej:  http://localhost:8100/folder/Inbox
+
+// En Visual Source Code , abrir esa carpeta de proyecto. 
+
+
+
+
+// app-routing.html
+// elemento "< ion-router-outlet >"
+ng g page ./pages/formulario/
+
+. cuando pulse Consulta, abrir ese componente. hacerlo en el component,,ts
+
+
+
+
+
+
+
+pppppppppppppppppppp
+. (...) Verbatim de apuntes, VER HOJA FOLIO 32
+pppppppppppppppppp
+
+. Tocar formulario-page.html para que haya un <ion-header></ion-header>  , podemos copiar uno de folder-page.html
+
+. Crear servicio (en la carpeta de proyecto):
+
+ng g s ./sesrvices/httpdata
+
+
+. Rellenamos código ahí, en su .ts
+
+.(...)
+ 
+ 
+. En carpeta proyecto myionic_001: Creamos un page (un tipo de componente de Ionic) listado: 
+
+ng g page ./pages/listado
+
+. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+. @EJERCICIO. MODIFICARLO:   para que al hacer clic en el menú Info, salga la page "page-listado", y que ahí se contenga un componente ion-list
+ffffffffffffffffffffffffffffffffffffffffffffffff
+(Recordar):  
+- Terminal hacer cd a la carpeta de proyecto: (.../GitHub/myionic_001 )) 
+- Reiniciar server (en el puerto, port: 8100):     ionic serve    
+- Browser, open current app (the folder we're in, myionic_001 ) at the URL: http://localhost:8100/
+
+
+. app.components.ts, path listado
+
+
+
+
+
+ng g interface ./interface/pelicula
+
+en ese .ts poner: 
+
+export interface Pelicula {
+        title:string,
+        year:number,
+        cast:[],
+        genres:[],
+        href:string,
+        extract:string
+}
+
+
+
+. En archivo listado-page.html poner (el ngFor hace bucle por cada película), saldrá, al pulsar menú Info, el listado de películas: 
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let pelicula of peliculas">
+      <ion-label>{{pelicula.title}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+
+
+. Ahora sale en la lista el título. Hay que añadir la imagen (las películas que tengan, en el json no todas tienen)
+
+
+
+
+
+
+
+
+
+
+. @EJERCICIO. el json tiene un campo thumbnail, añadir ese campo thumbnail:
+
+* pelicula.ts añadir texto->  thumbnail:string: 
+
+export interface Pelicula {
+        title:string,
+        year:number,
+        cast:[],
+        genres:[],
+        href:string,
+        extract:string, 
+        thumbnail:string
+}
+ 
+
+
+. listado.page.html, modificar para que quede ésta línea: 
+      <img [src]="pelicula.thumbnail"><img>
+quedando así: 
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let pelicula of peliculas">
+      <ion-label>{{pelicula.title}}</ion-label>
+      <!-- <ion-img *ngIf="pelicula.thumbnail!==undefined" src={{pelicula.thumbnail}} style="width: 80px;"></ion-img>     --Esto muestra img rotas si vacías   -->
+      <img [src]="pelicula.thumbnail"><img>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ (@Seguir con las cosas del enunciado de los folios de apuntes, página 31 por detrás)
+ ------
+ 
+
+ * Nota: Ejemplo, key, etc. en: /Users/tardes/Documents/GitHub/CURSO_js-ionic-20240102/sesion09/omdb/index.html
+
+* File key aquí: 
+file:///Users/tardes/Documents/GitHub/chorraschorrez.github.io/omdb.js
+
+
+
+
+
+
+
+
+@CORRECCIÓN DEL PROFE (explicación de sus añadidos, que imagino subirá)
+--
+
+
+ . A partir del JSON retornado de omdb, obtener un Interface de JSON (hay webs herramienta, ej. Transform tools) para ver la pinta. 
+ . Se pone en pelicula.ts
+ . En la página formulario.page.html, de formulario, poner (creo que en un <ion-content>), poner dentro un ion-content, y un ionic-ALGO input, un botón de buscar, una imagen y una lista por item para poner detalle de dsatos como título, año director...
+ . Observar que ahí, cuando hay cosas dinámicas interpoladas como {{,,,.titulo}} significa que ese campo está en el ts correspondiente, en éste caso: formulario.page.ts. 
+ . httpdata.service.ts. Hay en el export class: un "const parametros"", ponemos ahí la apikey, y la t (título que se pone en la url de pedir película). 
+ . Observar que se hace un GET (no un post). En otros casos hemos usado lo otro, pero en éste caso concreto eso da igual, aunque sea más complicado pues hay que enviar unos append para construir la cadena de la petición. 
+ . Ojo, el OMDB_API_KEY, en httpdata.service.ts, habría que importarla del environment: podría ser que eso no sea igual en desarrollo que en producción. Por eso, éste tipo de parámetros se debería meter en environment.ts (es más adecuado meter constantes ahí). Creo que lo normal es ponerse aquí qué fichero de constantes a cargar. 
+ . 
+
+. La gestiópn de la petición, formulario.page.ts, está el: this.httpds.getMovie(this.titulo).subscribe( ...
+. ahí hay un .subscribe, con el data. Eso es cuando todo ha ido bien (habría que contemplar otros casos, por eso se pone next, error, complete). 
+. Como esa petición tarda un ratito, en una variable con un nG, vamos metiéndo todo. 
+. Luego hay que interpolar todo en el formulario. 
+
+
+
+
+
+.  
