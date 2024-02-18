@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relojes</title>
+    <link rel="styles.css" href="">
+</head>
+<body>
+
+<!--
+/*
+Ejercicio. 
+En una web que aparezcan tres relojes digitales (refrescándose): 
+
+Nueva York
+La Habana
+Moscú
+
+setInterval usar. 
+*/
+-->
+
+Relojes (pendiente...)
+<div class="container">
+
+</div>
+    
+</body>
+</html>
+
+<script>
+    const TIEMPO_REFRESCO = 1000;
+setInterval(mostrarHora, TIEMPO_REFRESCO);
+
+
+const optionsNY = {timeZone : "America/New York"};
+const optionsMA = {timeZone : "Europe/Madrid"};
+const optionsTO = {timeZone : "Asia/Tokio"};
+
+function mostrarHora(){
+    console.log("mostrarHora()");
+    const ahora = new Date();
+    ahoraNY = ahora.toLocaleString("es", optionsNY);
+    ahoraMA = ahora.toLocaleString("es", optionsMA);
+    ahoraTO = ahora.toLocaleString("es", optionsTO);
+
+    // Hora
+    document.querySelector("#ny").innerHTML=ahoraNY;
+    document.querySelector("ma").innerHTML=ahoraMA;
+    document.querySelector("to").innerHTML.ahoraTO;
+    // Segundero
+    let currentSecond = ahora.getSeconds();
+    document.querySelectorAll(".seconds").forEach(element=>{
+        element.style.with=(currentSecond*90/60)+"%";
+    })
+    
+    
+
+
+}
+
+
+
+</script>
+

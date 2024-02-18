@@ -1,0 +1,3 @@
+Github uses local home paths: 
+*  R:\UserWksp\wks_VSC\github\chorraschorrez_gmail\chorraschorrez.github.io
+*  C:\Users\FRANCISCO\Documents\GitHub\chorraschorrez.github.io\

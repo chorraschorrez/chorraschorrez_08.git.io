@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*
+Comentario válido en SASS 
+*/
+#div-principal {
+  color: green;
+  background-color: yellow;
+  height: 10;
+}
+
+#div-secundario p {
+  font-size: 3em;
+  background-color: red;
+}
+
+#peli1 {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  border: 1px;
+  box-shadow: 5ps 5px 3px gray;
+}
+
+#peli2 {
+  width: 100px;
+  height: 50px;
+  background-color: orange;
+  border: 1px;
+  box-shadow: 5ps 5px 3px gray;
+}
+
+.caja-guay {
+  width: 20;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.caja-guay {
+  width: 20;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+/*# sourceMappingURL=style.css.map */

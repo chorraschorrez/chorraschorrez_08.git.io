@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+</head>
+<body>
+    /* References: "Automatic Table of Contents", "Avatar of Chris Coyier", 
+    "Chris Coyier on Mar 20, 2013", https://css-tricks.com/automatic-table-of-contents/
+    */
+
+
+    <h3 id="question1a">Chapter 1</h3>
+    <h3 id="dos">Chapter 2</h3>
+    <h3 id="tres">Chapter 3</h3>
+    <p>-
+    <p>-
+    <p>-
+    <p>-
+
+    <a href="#question-1-a">Link to #question1a</a>
+    <p></p>
+    <a href="#question-1-b">Link to #question1b</a>
+    <p></p>
+    <a href="#question2a">Link to #question2a</a>
+    <p></p>
+    <a href="#question2b">Link to #question2b</a>
+    <p></p>
+    <link rel="stylesheet" placeholder="http://www.escepticos.org" href=""> 
+</body>
+</html>
+
+<script>
+
+/*
+let h3_arr = document.getElementsByTagName('H3');
+console.log("h3_arr="+h3_arr);
+console.log("h3_arr,,,="+h3_arr[0]);
+
+let trozoSub = h3_arr[0].id;
+console.log("trozoSub,,,="+trozoSub);
+*/
+
+
+// newLine =
+//     "<li>" +
+//       "<a href='" + link + "'>" +
+//         title +
+//       "</a>" +
+//     "</li>";
+// log.console("newline="+newLine);
+
+
+
+// let title_test = "Link to #question1a";
+
+// let link_test = "#question-1-a";
+
+// newLine =
+//     "<li>" +
+//       "<a href='" + link_test + "'>" +
+//         title_test +
+//       "</a>" +
+//     "</li>";
+// console.log("newLine="+newLine);
+
+
+/*
+h3_arr.for (let index = 0,; index < array.length; index++) {
+    const element = array[index];
+    
+}
+*/
+
+let h3_arr = document.getElementsByTagName('H3');
+console.log("h3_arr="+h3_arr);
+console.log("h3_arr[0]="+h3_arr[0]);
+
+let newLine="";
+let link="";
+let title="";
+let index = "";
+for (var i= 0; i <= h3_arr.length-1; i++){
+    console.log("i="+i);
+    console.log("h3_arr[i].id="+h3_arr[i].id);
+
+    link = "#"+h3_arr[i].id;
+    console.log("link="+link);
+    //title = "title for link id-> "+link;
+    title = h3_arr[i].textContent;
+    console.log("title="+title);
+    
+    newLine +=
+    "<li>" +
+      "<a href='" + link + "'>" +
+        title +
+      "</a>" +
+    "</li>";
+
+    index=index+newLine;
+    console.log("newLine="+newLine);
+}
+console.log("------");
+console.log("Index enlaces:"+index);
+
+
+
+
+
+
+
+
+
+</script>

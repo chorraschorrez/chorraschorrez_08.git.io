@@ -1,0 +1,10 @@
+/*
+*/
+let mascotas = ["perrito.jpg","gatito.avi","loro.mp3","galápago.docx","gallo.jpg"];
+
+let array2 = mascotas.map(function(elemento){
+    //let sItem;
+    //sItem += elemento;
+    debug.log(elemento);
+}
+);

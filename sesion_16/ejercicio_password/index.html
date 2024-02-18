@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar pwd</title>
+</head>
+<body>
+    <h1>Ejercicio</h1>
+    <form action="unaUrl.php">
+        <input type="text" name="nombre" required placeholder="email">
+        <input type="text" name="password" required placeholder="password">
+        <input type="submit" id="enviar" value="Validar">
+    </form>
+    <span id="imsgerror"></span>
+     
+</body>
+</html>         
+<script>
+
+    // Anular acción del formulario por defecto
+    
+
+//    console.log("Click en submit. Prevenimos accion con e.preventDefault()...");
+    //document.forms[0].submit() // Invocación explícita al submit de un formulario. (Forzarla manualmente).
+    
+//    URL con el json con array de palabras muy usadas como password: 
+//    const URL = "http://127.0.0.1:5500/100000-most-common-passwords.json";
+
+
+
+    function realizarValidacion(){
+        document.querySelector("#enviar").addEventListener("click", (e)=> {
+            e.preventDefault();
+            let password = document.querySelector("#password").value;
+            /*
+            */
+            if (paswordsprohibidas.some(password){      // Ojo, notar que .includes serviría (a cambio de .some): aunque se use en strings, pero aquí se aplica a un array!
+                console.error("Password prohibida, demasiado común");
+            } else {
+                console.warn("Password correcta");
+            }
+
+            /* Otra opción: IN, SOME, bucles, etc. Ej. 
+            if (password in passwordsProhibidas){
+                console.error("Password prohibida (OPCION IN)")
+            }
+            // Etc. 
+
+        */
+        }
+    }
+   
+
+
+
+       ////for (let i=0; i<passwordsProhibidas.length;i++
+    
+
+    function validarFormulario(){
+        let formulario = document.forms[0];
+        if (formulario.ckeckvalidity()){
+            console.warn("Todo ok");
+        } else {
+            console.log ("No bien");
+        }
+        }
+    }
+
+
+
+    function getPasswords(){
+        document.querySelector("#enviar").addEventListener("click", (e)=> {
+        e.preventDefault();
+        let password = document.querySelector("#password").value;
+        /*
+        */
+        if (paswordsprohibidas.some(password){      // Ojo, notar que .includes serviría (a cambio de .some), aunque se use en strings, pero aquí se aplica a un array!
+            console.error("Password prohibida, demasiado común");
+
+        } else {
+            console.warn("Password correcta");
+        }
+   
+
+       /* Otra opción: IN, SOME, bucles, etc. 
+       if (password in passwordsProhibidas){
+        console.error("Password prohibida (OPCION IN)")
+       }
+       // Etc. 
+       */
+
+       ////for (let i=0; i<passwordsProhibidas.length;i++
+    }
+    };
+    
+
+    var paswordsprohibidas;
+
+    getPasswords();
+    realizarValidacion();
+    validarFormulario();
+
+
+
+
+    // Archivo con JSON con array de palabras no válidas: 
+    const URL ="http://127.0.0.1/ejercicio_password/passwords/passwords.json";
+    var XMLHttp = new XMLHttpRequest();
+    XMLHttp.onreadystatechange = function (){
+        if (XMLHttp.readyState == 4 && XMLHttp.status==200){
+            passwordsProhibidas = JSON.parse(XMLHttp.responseText);
+            console.log(XMLHttp.responseText);
+        }
+    }
+    XMLHttp.open("GET", URL, false);
+    XMLHttp.send();
+    }
+
+</script>

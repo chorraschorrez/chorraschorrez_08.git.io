@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample_html</title>
+</head>
+<body>
+    <a href="#question-1-a">Link to #question1a</a>
+    <p></p>
+    <a href="#question-1-b">Link to #question1b</a>
+    <p></p>
+    <a href="#question2a">Link to #question2a</a>
+    <p></p>
+    <a href="#question2b">Link to #question2b</a>
+    <p></p>
+    <link rel="stylesheet" placeholder="http://www.escepticos.org" href="">  http://www.escepticos.org  texto del link</body>    
+
+    <p>
+
+
+    <p></p>
+    <div>
+        <a href="http://github.com/fpaniaguajavascript"> @curso javascript Github Fernando Paniagua:  http://github.com/fpaniaguajavascript  </a></div>
+    </html>div>
+    
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+<p>paragraph of text</p>
+
+
+    <article>
+        <h3 id="question1a">Title of question1a</h3>
+        Things here
+        <h3 id="question1b">Title of question1b</h3>
+        More things here
+    </article>
+    
+    <article>
+        <h3 id="question2a">Title of question2a</h3>
+        Things here
+        <h3 id="question2b">Title of question2b</h3>
+        More more things here
+    </article>
+
+        
+</body>
+</html>
+<script>
+    /* References: "Automatic Table of Contents", "Avatar of Chris Coyier", 
+    "Chris Coyier on Mar 20, 2013", https://css-tricks.com/automatic-table-of-contents/
+    */
+    var ToC = 
+        "<nav role='navigation' class='table-of-contents'>"+
+        "<h2>On this page:</h2>"+
+        "<ul>";
+    console.log("ToC="+ToC);
+/*    
+    // For each header...
+    var e1, title, link;
+    $("article h3").each(function(){ 
+        // loop get the bits of data we need
+        e1= $(this);
+        title=e1.text();
+        link = "#" + e1.attr("id");
+        // Create a new list item and append to string
+    }
+    );
+*/
+    // For each header...
+    let h3_arr = document.getElementsByTagName('H3');
+    let h3_cell_0 = h3_arr[0];
+    console.debug("h3_cell_0="+h3_cell_0);  // Prints: h3_cell_0=[object HTMLHeadingElement]
+    console.debug("h3_cell_0,,,="+h3_cell_0);  // Prints: h3_cell_0,,,=[object HTMLHeadingElement]
+    console.debug("h3_cell_0,,,="+h3_cell_0.nodeValue); // h3_cell_0,,,=null
+    console.debug("h3_cell_0,,,="+h3_cell_0.id.value); // h3_cell_0,,,=undefined
+    console.debug("h3_cell_0,,,="+h3_cell_0.value); // h3_cell_0,,,=undefined
+/*    
+    //h3.array.forEach(element => {
+    h3.array.forEach(element => {
+        title = element.text();
+    });
+*/
+    //I want to cycle through the objects contained in an array and change the properties of each one. If I do this:
+    for (var j = 0; j < h3_arr.length; j++){
+        console.log(h3_arr[j]);  // OK, prints: h3#question1a 
+        let trozo0 = h3_arr[j];
+        let trozoSub = trozo0.substring[0];  // Uncaught TypeError TypeError: Cannot read properties of undefined (reading '0')
+        let trozo = h3_arr[j].substring[0].value;  // Uncaught TypeError TypeError: Cannot read properties of undefined (reading '0')
+        let trozo2 = h3_arr[j].substring[0,3].value;
+        console.log(h3_arr[j].substring(0,3));  // Uncaught TypeError TypeError: h3[j].substring is not a function
+        title=h3_arr[j].innerHTML.textContent;
+        title=h3_arr[j].querySelector("#h3");
+        var a = showID(title);
+        title=h3_arr[j].querySelector("#h3").id;
+        title=h3_arr[j].innerHTML.textContent.querySelector("#h3");
+        title=h3_arr[j].innerHTML.id.value;
+        let myAll = h3_arr[j].querySelectorAll("id");
+        link = "#" + h3_arr[j].attr("id");
+    }
+
+    /*
+    )
+        e1= element;
+        title = e1.text();
+        link = "#" + e1.attr("id");
+        // Create a new list item and append to string
+    }
+    );
+*/
+
+/*
+    // References: *  https://teamtreehouse.com/community/changing-the-text-color-of-all-items-with-the-same-tag-in-javascript
+    let h3 = document.getElementsByTagName('H3');
+  if (darkModeState == true) {
+    document.body.style.backgroundColor = "#111";
+    document.getElementsByTagName('h1')[0].style.color = '#DDD';
+    document.getElementsByTagName('h2')[0].style.color = '#DDD';
+    for (i of h3) {
+      h3[i].style.color = '#DDD';
+    }
+  } else {
+    document.body.style.backgroundColor = "#FFF";
+    document.getElementsByTagName('h1')[0].style.color = '#DDD';
+    document.getElementsByTagName('h2')[0].style.color = '#DDD';
+    for (i of h3) {
+      h3[i].style.color = '#DDD';
+    }
+  }
+*/
+
+</script>

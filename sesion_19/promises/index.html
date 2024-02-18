@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function getPromise(){
+    const promise1 = new Promise((resolve, reject)=>{
+        console.log("Paso 1");
+        setTimeout(()=> {
+            console.log("Paso 3");
+            resolve("Resultado OK");
+            //resolve("Resultado KO");
+        }, 5000);
+        console.log("Paso 2");
+    });
+}
+
+    getPromise().then((retorno) => {
+        // Bloque de retorno
+        console.log("Paso 4: "+retorno);
+    }).catch((error) => {
+        // -bloque del error
+        console.log("Paso 4: "+error);
+    }).finally(()=>{
+        // Bloque del finally
+        console.log("Paso 5: finally");
+    });
+    
+    /*
+    https://192.168.1.106:8080/
+
+9ac4
+
+@WIFI nueva: 
+TP-Link_D628zzzz    ... TP-Link_9AC4
+pwd:
+42382119
+
+    */
+
+
+</script>

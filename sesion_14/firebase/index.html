@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar pwd</title>
+</head>
+<body>
+
+    <form action="unaUrl.php">
+        <input type="text" name="nombre" required placeholder="email">
+        <input type="text" name="password" required placeholder="password">
+        <input type="submit" id="enviar" value="Validar">
+    </form>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#enviar").addEventListener("click", (e)=> {
+        e.preventDefault();
+        console.log("Click en submit. Prevenimos accion con e.preventDefault()...");
+        //document.forms[0].submit() // Invocación explícita al submit de un formulario. (Forzarla manualmente).
+        
+        // URL con el json con array de palabras muy usadas como password: 
+    //    const URL ="https://lucidar.me/en/security/files/100000-most-common-passwords.json";
+        URL = "http://127.0.0.1:55000/100000-most-common-passwords.json";
+        var XMLHttp = new XMLHttpRequest();
+        XMLHttp.onreadystatechange = function (){
+            if (XMLHttp.readyState == 4)
+        }
+        XMLHttp.open("GET", URL, false);
+        XMLHttp.send();
+
+        
+        // 
+        for (let i=0; i<document.forms[0].elementos.length; i++){
+            console.debug("i="+i);
+        };
+
+    }
+);
+</script>

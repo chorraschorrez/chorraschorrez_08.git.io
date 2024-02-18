@@ -1,0 +1,64 @@
+
+/*
+Comentario válido en SASS 
+*/
+// ,,,
+
+@import "colores.scss";
+
+$color-principal:green;
+$color-texto:yellow;
+
+#div-principal {
+    color: $color-principal;
+    background-color: $color-texto;
+    //$archivo_color_pink
+    height: $archivo_valor_alto * 2;   // Se lee del archivo: colores.scss
+}
+
+#div-secundario {
+    p{
+        font-size: 3em;
+        background-color: red;
+    }
+}
+
+@mixin tarjeta($ancho, $alto, $color){
+    width: $ancho;
+    height: $alto;
+    background-color: $color;
+    border: 1px;
+    box-shadow: 5ps 5px 3px gray;
+
+}
+
+#peli1 {
+    @include tarjeta(100px, 50px, green); 
+}
+
+#peli2 {
+    @include tarjeta(100px, 50px, orange); 
+}
+
+
+// Personalizado para las etiquetas con dentro un class="caja-guay"
+%caja-aquamarine {
+    width: 20;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+%sombra {
+    width: 20;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+
+
+// Puede heredar
+.caja-guay {
+    @extend %caja-aquamarine;
+    @extend %sombra;
+}
+

@@ -1,0 +1,48 @@
+
+
+
+/* 
+USE NO PREFIX TO SELECT BY TYPE (IN THIS CASE: ALL P, PARAGRAPH ELEMENTS)
+*/ 
+p {
+	background-color:"CYAN";
+}
+
+/* 
+USE "." (DOT) TO SELECT BY TYPE (THIS CASE: ALL ELEMENTS OF THAT TYPE) 
+*/
+/*....
+*/ 
+
+
+/* 
+USE “ID” () TO SELECT A CONCRETE ELEMENT (THIS CASE: THE ELEMENT WITH id="id_three"): 
+	(NOTE THAT THIS OVERRIDES THE PREVIOUS STYLE FOR THE THIRD PARAGRAPH WHICH HAVES THAT ID)
+*/ 
+#div_three {
+	color: red;
+	background-color: yellow;
+	font:"Arial"  ;
+}
+
+
+/* 
+USE “CLASS NAME” (DOT) TO SELECT ELEMENTS (IN THIS CASE: THE DIV WITH class="exampleone"): 
+*/ 
+
+.exampleone {
+	background-color: teal;
+	color: rgb(7, 21, 146);
+  }
+  
+ .exampletwo {
+	background-color: rgb(153, 102, 153);
+	color: rgb(255, 255, 204);
+  }
+  
+ .examplethree {
+	background-color: #777799;
+	color: #ffffff;
+  }
+  
+  

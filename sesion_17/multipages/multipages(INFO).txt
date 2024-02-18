@@ -1,0 +1,14 @@
+<!--
+/*
+Ejercicio.
+Aplicacion, soporte FireBase, 
+- Listado con fichas
+- Con pestañas 
+    - Una específica para el restaurante
+    -
+- Navegar. 
+
+Nos da el esquema de la navegación. 
+
+*/
+-->

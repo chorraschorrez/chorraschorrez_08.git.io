@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="loquesea.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <input type="text" name="apellido" id="apellido">
+        <input type="number" name="edad" id="apellido" min="10" max="100" required>
+        <input type="color" name="color">
+        <input type="range" name="range" value="15" min="10" max="100">
+        
+        <!-- Validar, empaquetar los valores de los inputs con na... -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
+
+/* 
+Ejercicio. 
+Uso de rango (input type range), sin formulario, 
+Programar una acdión relacionada con el value de su desplazamiento
+*/

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo fetch</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+//let x = fetch('https://www.google.com');
+
+let x = fetch('http://192.168.1.107:8080/ejemplo1.html');
+
+
+  // 'VERSIÓN EXTENDIDA'
+x.then(function(response){
+    console.log("Response status: " + response.status); //200
+    console.log("Response status text: " + response.statusText); //OK
+    return response.json();
+}).then(function(datos){
+    console.log(datos);
+});
+
+/*
+  // 'VERSIÓN COMPACTA'
+const URL = "http://192.168.1.107:8080/playstation_covers.json";
+fetch(URL)
+.then(response => response.json)
+.then(datos => console.log(datos));
+*/
+
+</script>

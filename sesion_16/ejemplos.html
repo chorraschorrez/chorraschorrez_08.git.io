@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos</title>
+</head>
+<body>
+
+    <form action="unaUrl.php">
+        <input type="text" name="nombre" required placeholder="email">
+        <input type="text" name="password" required placeholder="password">
+        <input type="submit" id="enviar" value="Validar">
+    </form>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#enviar").addEventListener("click", (e)=> {
+        e.preventDefault();
+        console.log("Click en submit. Prevenimos accion con e.preventDefault()...");
+        //document.forms[0].submit() // Invocación explícita al submit de un formulario. (Forzarla manualmente). 
+        // 
+        for (let i=0; i<document.forms[0].elementos.length; i++){
+            console.debug("i="+i);
+        };
+
+    }
+);
+</script>

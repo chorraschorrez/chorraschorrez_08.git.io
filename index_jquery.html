@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio métodos api DOM</title>
+</head>
+
+
+/*
+Ejercicio. 
+Página que 
+obtener lo selementos:
+id='principal'
+class importante
+tagname div
+
+    <div id="principal">
+        <span>Soy el principal</span>
+    </div>
+    <div class="importante">
+        <span>Soy importante 1</span>
+    </div>
+
+    <div class="importante">
+        <span>Soy importante 1</span>
+    </div>
+
+    <script>
+        let htmlelement = document.getElementById("principal");
+        console.log(htmlelement);
+
+        let coleccionelement = document.getElementByClassName("importante");
+        console.log("coleccionelement"+coleccionelement);
+
+        let coleccionEtiquetas = document.getElementByClassName("importante");
+        console.log("coleccionEtiquetas"+coleccionEtiquetas);
+
+        let coleccion3 = document.getElementByTagName("div");
+        console.log(coleccion3);
+
+        // Hecho de otro modo, MEJOR: 
+        document.querySelector("#principal");
+        document.querySelectorAll(".importante");
+        document.querySelector("div");
+    </script>
+
+
+<body>    
+    <div ="Uno">Uno</div>
+    <div ="Uno">Uno</div>
+    <div ="Uno">Uno</div>
+    
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3..7.1.js">
+
+</script>
+
+<script>
+    // $ es para abreviar el jquery. 
+    setTimeout(()=> {
+    $("#uno").css("color", "red");
+    $(".ocupado").css("background", "yellow");
+}, 3000);   
+$("div").click
+</script
+

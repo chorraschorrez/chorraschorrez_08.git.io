@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Hola, initial-scale=1.0">
+    <title>JavaScript Guide</title>
+</head>
+<body>
+    <p>
+<h1>JSP Guide</h1>
+<p>Simple guide. 
+
+<h1>Introduction</h1>
+
+<h1>Misc unordered</h1>
+
+<p> document.querySelector("");
+<p>e.preventDefault()  // Evita acción por defecto
+    ==
+
+<code>
+    <form action="unaUrl.php">
+        <input type="text" name="nombre" required placeholder="">
+        <input type="submit" id="bEnviar" value="Enviar">
+    </form>
+    <script>
+    document.querySelector("#bEnviar").addEventListener("click", (e)=> {
+        e.preventDefault();
+        console.log("Click en submit. Prevenimos accion con e.preventDefault()...");
+        //document.forms[0].submit() // Invocación explícita al submit de un formulario. (Forzarla manualmente). 
+        // 
+        for (let i=0; i<document.forms[0].elementos.length; i++){
+            console.debug("i="+i);
+        };console.debug("i="+i);
+    });
+    
+    
+    </script>
+</code>
+
+
+</body>
+</html>
+
+pedir identificacion, buscamos en lista de palabras que no exista ya. 
