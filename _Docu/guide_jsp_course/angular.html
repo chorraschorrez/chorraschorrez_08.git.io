@@ -51,5 +51,134 @@ ng serve -o
 <pre>ng generate class movie ./
 <pre/>
     
+    
+    
+    
+
+
+</p>
+</p>@Angular mi resúmen:
+</p>-------------------------- 
+</p>(@service HTTP , Create service HTTP)
+</p>* @References: @Tutorial, "Creating a movie fetching service in Angular", https://dev.to/dailydevtips1/creating-a-movie-fetching-service-in-angular-338h
+</p>
+</p>* Go app.module.ts (,,,)
+</p>--
+</p>- Add: 
+
+</p>import { HttpClientModule } from '@angular/common/http';
+</p>
+</p>
+</p>- Add: 
+</p>
+</p>@NgModule({
+</p>  declarations: [
+</p>        // All declarations
+</p>  ],
+</p>  imports: [
+</p>    BrowserModule,
+</p>    HttpClientModule,
+</p>    // Other imports
+</p>  ],
+</p>  providers: [],
+</p>  bootstrap: [AppComponent]
+</p>})
+</p>
+</p>
+- Terminal: Create service: 
+
+ng generate class movie ./
+
+. (alternatives: create an interface called pelicula: ng g interface ./interface/pelicula   )
+<pre>
+</p> Fill movie.ts : 
+
+</p>* File movie.ts
+</p>	--
+</p>	export class Movie {
+	    Poster: string;
+	    Title: string;
+	    Type: string;
+	    Year: string;
+	    imdbID: string;
+	}
+</pre>
+
+
+<li>. Generate service:. On terminal: 
+</li>
+<pre>
+ng generate service movie
+. (alternatives:  ng generate service httpdata ./services/httpdata --skip-tests     )
+</pre>
+. Add content: 
+
+<pre>
+	* File movie.service.ts
+	--
+	
+	import { HttpClient } from '@angular/common/http';
+	import { Injectable } from '@angular/core';
+	import { Movie } from './movie';
+	
+	export type ApiResponse = {
+	  Response: string;
+	  Search: Movie[];
+	  totalResults: string;
+	};
+	
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class MovieService {
+	  apiURL: string = 'http://www.omdbapi.com/?apikey={key}';
+	
+	  constructor(private httpClient: HttpClient) {}
+	}
+</pre>
+
+
+<li>. Add search method to it: 
+</li>
+
+</br>* File movie.service.ts
+</br>--
+  <pre>
+	(...)
+	searchMovie(name: string) {
+	    return this.httpClient.get<any>(`${this.apiURL}&s=${name}`);
+	}
+	(...)
+</pre>
+
+    
+
+</br>========================================================================================
+<h3>@pelisweb proyecto </h3>
+========================================================================================
+</br>2024-02-12_2032_pelisweb
+</br>
+</br>https://fpaniaguajavascript.github.io/movies/movies-1900s.json
+</br>
+<pre>
+
+sudo ng new pelisweb  
+
+sudo chown -R tardes:staff pelisweb
+
+// -- GitHub Desktop: 
+menu Add local repository
+
+
+// -- DENTRO DE CARPETA pelisweb. Sin sudo: 
+
+ng g c ./components/clienteweb --skip-tests
+
+ng g s ./services/conectorwebservice --skip-tests
+
+</pre>    
+    
+    
+    
 </body>
 </html>
