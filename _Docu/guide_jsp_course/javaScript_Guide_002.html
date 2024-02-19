@@ -489,7 +489,7 @@ file:///Users/tardes/Documents/GitHub/chorraschorrez.github.io/omdb.js
  . Ojo, el OMDB_API_KEY, en httpdata.service.ts, habría que importarla del environment: podría ser que eso no sea igual en desarrollo que en producción. Por eso, éste tipo de parámetros se debería meter en environment.ts (es más adecuado meter constantes ahí). Creo que lo normal es ponerse aquí qué fichero de constantes a cargar. 
  . 
 
-. La gestiópn de la petición, formulario.page.ts, está el: this.httpds.getMovie(this.titulo).subscribe( ...
+. La gestión de la petición, formulario.page.ts, está el: this.httpds.getMovie(this.titulo).subscribe( ...
 . ahí hay un .subscribe, con el data. Eso es cuando todo ha ido bien (habría que contemplar otros casos, por eso se pone next, error, complete). 
 . Como esa petición tarda un ratito, en una variable con un nG, vamos metiéndo todo. 
 . Luego hay que interpolar todo en el formulario. 
