@@ -19,8 +19,9 @@
     <h5>Proyecto ionic, @References,</h5>
      <li>* "5 Nuestra Primera App con Ionic", https://www.youtube.com/watch?v=QepxfadRc3Y&list=PLYPjmy5IVxT-7FV0uzpG2izFhGoE0Hq2y&index=6" </li>
      <li> * "How to Build Your First Ionic 4 App with API Calls", "ionicacademy.com", "Posted on January 24th, 2019", https://ionicacademy.com/ionic-4-app-api-calls/  </li>
+    <li> * "Code with omdb_key, example of services, etc.", file:///Users/tardes/Documents/GitHub/chorraschorrez.github.io/omdb.js </li>>
     
-    
+<h3> # Create Ionic project </h3>   
 <br>    
 (Ej. crear aplicación en carpeta demoapp         e.g. /Users/tardes/Documents/GitHub/demoapp/  )
 <pre>sudo ionic start demoapp  </pre>
@@ -32,8 +33,17 @@
 sudo chown -R tardes:staff demoapp
 </pre>
 
+<h3> # Create Ionic pages, and server </h3>
+<pre>
+# Use the CLI to generate some pages and a service ( previously change terminal to project folder)
+ionic g page pages/movies
+ionic g page pages/movieDetails
+ionic g service services/movie
+</pre>
 
-<h3> #Arrancar projecto Ionic
+
+
+<h3> #Start server
 </h3>
 <pre>
 #    (terminal must be placed on project folder: cd tardes )
@@ -46,7 +56,10 @@ Open project folder at VSC. So Drag and drop from it from file explorer to VSC.
 
 
 <p> * Edit file: app/app-routing.module.ts and change it to (see the three const routes added): </p>
+
 <pre>
+()FORMATO DEPRECADO, USAR EL PÁRRAFO SIGUIENTE)
+<del>
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
  
@@ -61,14 +74,139 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+</del>
 </pre>
 
 
 
-    
-    
-    
 
+
+<pre>
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'pages/movies',  // E.g. if browser box: http://localhost:8101/pages/movies , then redirect to: http://localhost:8101/pages/movies
+    pathMatch: 'full'
+  }
+,
+  {  
+    path: 'pages/movies',
+    loadChildren: () => import('./pages/movies/movies.module').then(x => x.MoviesPageModule)
+  },
+  {
+    path: 'movies-details/:id', 
+    loadChildren: () => import('./pages/movie-details/movie-details.module').then(x=> x.MovieDetailsPageModule)
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</pre>
+
+
+
+<p>
+File app.module.ts
+</p>
+
+<pre>
+<del>
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+ 
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+ 
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+ 
+import { HttpClientModule } from '@angular/common/http';
+ 
+@NgModule({
+  declarations: [AppComponent],
+  entryComponents: [],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+</del>
+</pre>
+
+
+<pre>
+
+/*
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MovieService {
+
+  constructor() { }
+}
+*/
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+ 
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
+ 
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+ 
+import { HttpClientModule } from '@angular/common/http';
+ 
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+</pre>
+
+
+
+
+
+
+<h3>
+Making HTTP requests
+</h3>
+
+
+
+<pre>
+    searchData(): This function searches for results to a specific title and search type – an enum we defined upfront to represent the types that we can pass to the API using TypeScript!
+    getDetails(): This function returns the detailed information for one specific element, will be used on our details page
+</pre>
+    
+    
+    
+<p>
+File movie.service.ts
+</p>
+<pre>
+
+</pre>
     
      
     
