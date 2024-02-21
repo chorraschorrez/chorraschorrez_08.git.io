@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular guide</title>
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div>
@@ -30,7 +31,7 @@ gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h2>Angular guide</h2>
 
 </p>
-<li>Comon commands: </li>
+<h4>Comon commands: </h4>
 
 </br> sudo chown -R tardes:staff pro_01
 </pre>
@@ -55,7 +56,7 @@ ng serve -o
 </br>- Terminal: Create service: 
 
 <pre>ng generate class movie ./
-<pre/>
+</pre>
     
     
     
@@ -184,7 +185,128 @@ ng g s ./services/conectorwebservice --skip-tests
 
 </pre>    
     
-    
-    
+(@Inicio @resúmen de: "Angular-00-Promises y Observables.pdf")
+
+<h2>Promises (Angular)</h2>    
+Objeto que permite programación asíncrona. 
+* Recibe como parámetro una función. Y ésta recibe dos funciones:
+</br>--
+<ul></ul>
+<li>	- resolve. Respuesta satisfactoria. </li>
+<li>	- reject. Respuesta errónea. </li>
+La llamada a la promesa se gestiona mediante encadenamiento de llamadas (chain). 
+<ul>Admiten sólo un flujo de datos. </ul>
+<ul>No admiten cancelación. </ul>
+
+<pre>
+	const promise1 = new Promise((resolve, reject)=>{ console.log("1. Inicio de Promise") setTimeout(()=>{
+		console.log("3. Resolución de Promise"); //resolve("Resuelto")
+		reject("Error en Promise");
+		},3000);
+		console.log("2. Fin de Promise"); });
+</pre>
+<pre>
+promise1.then((retorno)=>{
+	 console.log("4. Then:"+retorno);
+}).catch((error)=>{
+	 console.log("4. Error:"+error);
+}).finally(()=>{
+	 console.log("5. Finally");
+})
+</pre>
+
+
+
+
+
+<h2>Observables (Angular)</h2>    
+Objeto que pueden tener una suscripción. 
+Para usarlos en JS, es necesaria una librería (Librería RxJS 
+<li>- "Reactive Extensions for JavaScript", ésta usa Observables para los callback). </li>
+Admiten reintentos. 
+Trabaja como un stream, un flujo que puede ser infinito. 
+<li>
+Usa métodos subscribe(), unsuscribe(). 
+</li>
+<li>xRxJS. función "from". (...)
+
+</li>
+
+
+<h4>
+Funciones de los Observables 
+</h4>
+<h5>-forEach</h5> 
+-> Permite recorrer el flujo. Recorre los elementos de un Observable.  
+<pre>
+miObservable = from("Texto a procesar");
+ngOnInit():void {
+	 this.miObservable.forEach(letra =>
+	console.log("Letra:" + letra)); }
+</pre>
+
+<h5>-Pipe</h5> 
+-> Permite aplicar operadores al flujo ▪subscribe→Permite suscribirse al flujo.
+Pipe. 
+</br>
+</br>Pipe. Ejemplo aplicando operador <b>filter</b>. 
+<pre>
+miObservable = from("Texto a procesar");
+ngOnInit():void { this.miObservable.pipe(
+filter(caracter => caracter!='o') ). forEach(c=>{
+console.log(c); });
+}
+</pre>
+
+</br>Pipe. Ejemplo aplicando operador <b>map</b>. 
+<pre>
+	miObservable = from("Texto a procesar");
+
+	ngOnInit():void {
+		 this.miObservable.pipe(
+			map(caracter => caracter.toUpperCase())
+	). forEach(c=>{
+		console.log(c); });
+	}
+</pre>
+
+
+
+<h5>-Subscribe</h5> 
+-> Permite s operadores al flujo ▪subscribe→Permite suscribirse al flujo.
+Pipe. 
+</br>
+</br>Pipe. Ejemplo de subscripción a un flujo. 
+<pre>
+	ngOnInit():void { this.miObservable.subscribe(caracter => {
+	console.log("Caracter:" + caracter); })
+	}
+</pre>
+
+
+
+
+<h4>Componentes de los Observables </h4>
+	<h5>-Observable</h5> 
+	-> Proporciona un stream de datos. Tiene los métodos: 
+	</pre>
+	<li>next(data) -> Proporciona el siguiente bloque de información del stream</li>
+	<li>error(error) -> Recibe el error</li>
+	<li>complete() -> Finaliza el stream</li>
+
+	<h5>-Observer</h5> 
+	-> Se suscribe a datos del Observable. 
+	<pre>
+		console.log('just before subscribe');
+		observable.subscribe({
+			next(x) { console.log('got value ' + x); },
+			error(err) { console.error('something wrong occurred: ' + err); },
+			 complete() { console.log('done'); }
+			});
+			console.log('just after subscribe');
+	</pre>
+
+(@Fin resúmen de: "Angular-00-Promises y Observables.pdf")
+
 </body>
 </html>

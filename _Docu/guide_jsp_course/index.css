@@ -1,4 +1,23 @@
+<!--
 p { 
     white-space:break-spaces;
+ }
+ -->
+
+
+ pre {
+    background-color: rgb(249, 243, 243);
+    color: rgb(93, 21, 132);
+
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+
+ }
+
+
+
+ p {
+    color: blue;
  }
  
