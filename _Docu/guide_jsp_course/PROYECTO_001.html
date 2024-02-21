@@ -71,9 +71,23 @@ VERBATIM, PARTE, DE HOME, Angular_Guide.doc
 6.2	PROYECTO “CURSO JAVASCRIPT AVANZADO E IONIC”
 (Tags: @Proyecto @curso, @JavaScript, @Ionic)
 * References: 
-- “https://ionicacademy.com/”, “How to Build Your First Ionic 4 App with API Calls”, “Posted on January 24th, 2019”, https://ionicacademy.com/ionic-4-app-api-calls/ 
+- “https://ionicacademy.com/”, “How to Build Your First Ionic 4 App with API Calls”, “Posted on January 24th, 2019”, https://ionicacademy.com/ionic-4-app-api-calls/
+- * "[Solución] Ionic no se reconoce como un comando interno o externo programa o archivo por lotes ejecutable", "Aitor Sánchez - Blog", "- Oct. 27, 2023, 11:29 a.m.", https://ia-pplication.com/blog/ionic-no-se-reconoce-como-un-comando
 
-(Terminal, go to base folder where you place all your projects e.g.    cd R:\UserWksp\wks_git\chorraschorrez_gmail\   R:  OR in IOS -> ,,,    )
+Install Ionic: 
+npm install @ionic/angular@v5-lts @ionic/angular-toolkit@4.0.0 --save.  
+
+- Windows. En el buscador escribimos "variables de entorno" o "environment variables".
+Abrimos "Editar variable de entorno de esta cuenta".
+Accedemos a "opciones avanzadas" > "variables de entorno" (es el último botón de la lista)
+En "variables del sistema" buscamos la variable "Path" y la editamos.
+Pulsamos en nuevo y agregamos los siguiente:
+<tu_unidad>:\<tu_grupo_de_usaurios>\<usuario>\AppData\Roaming\npm 
+(e.g. C:\Users\FRANCISCO\AppData\Roaming\npm  )
+
+
+
+(Terminal, go to base folder where you place all your projects e.g.    cd R:\UserWksp\wks_git\chorraschorrez_gmail\  ,  R:  OR in IOS -> ,,,    )
 # Create a blank new Ionic 4 app with Angular support
 ionic start movieApp blank --type=angular
 cd movieApp
